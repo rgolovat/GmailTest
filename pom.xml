@@ -11,7 +11,6 @@
         <target.site>https://gmail.com/</target.site>
         <!-- Reporting plugins versions-->
         <aspectj.version>1.8.10</aspectj.version>
-        <allure.version>1.5.4</allure.version>
     </properties>
 
     <dependencies>
@@ -131,6 +130,17 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-maven</artifactId>
+            <configuration>
+                    <reportDirectory>allure-report</reportDirectory>
+                    <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
+                <properties>
+                    <allure.issues.tracker.pattern>http://example.com/%s</allure.issues.tracker.pattern>
+                </properties>
+            </configuration>
+        </plugin>
         </plugins>
     </build>
 
