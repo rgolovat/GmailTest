@@ -1,1 +1,2 @@
 browserName=chrome
+chromeOptions={args=[--disable-infobars, --disable-notifications]}

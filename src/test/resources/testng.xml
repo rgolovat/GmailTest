@@ -4,5 +4,7 @@
 <suite name="Gmail Test" verbose="5" parallel="false" thread-count="1" preserve-order="true">
     <suite-files>
         <suite-file path="Test XMLs/gmailTest.xml" />
+        <suite-file path="Test XMLs/facebookTests.xml"/>
+        <suite-file path="Test XMLs/wallethubTest.xml"/>
     </suite-files>
 </suite>

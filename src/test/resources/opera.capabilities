@@ -1,0 +1,2 @@
+browserName=opera
+operaOptions={binary=C:\\\\Users\\\\rgolovaty\\\\Documents\\\\work\\\\GmailTest\\\\seleniumServer\\\\lib\\\\operadriver.exe; args=[--disable-setuid-sandbox,--log-level=3]}

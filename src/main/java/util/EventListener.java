@@ -133,15 +133,6 @@ public class EventListener implements WebDriverEventListener {
 
     }
 
-    @Override
-    public void beforeSwitchToWindow(String s, WebDriver webDriver) {
-
-    }
-
-    @Override
-    public void afterSwitchToWindow(String s, WebDriver webDriver) {
-
-    }
 
     @Override
     public void onException(Throwable error, WebDriver webDriver) {
@@ -152,15 +143,7 @@ public class EventListener implements WebDriverEventListener {
         }
     }
 
-    @Override
-    public <X> void beforeGetScreenshotAs(OutputType<X> outputType) {
 
-    }
-
-    @Override
-    public <X> void afterGetScreenshotAs(OutputType<X> outputType, X x) {
-
-    }
 
     private String elementDescription(WebElement element) {
         String description = "tag:" + element.getTagName();

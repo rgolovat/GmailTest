@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.Random;
 
 public class Helpers {
 
@@ -52,8 +53,14 @@ public class Helpers {
         return null;
     }
 
-    public static void clickWithJS(WebDriver driver){
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("document.querySelector(\"div[aria-label='Delete']\").click();");
+    public static String randomString (int length) {
+        char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        StringBuilder sb = new StringBuilder(length);
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            char c = chars[random.nextInt(chars.length)];
+            sb.append(c);
+        }
+        return sb.toString();
     }
 }

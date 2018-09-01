@@ -8,10 +8,11 @@ FOR /F "eol=; tokens=2,2 delims==" %%i IN ('findstr /i "selenium" selenium.prope
 FOR /F "eol=; tokens=2,2 delims==" %%i IN ('findstr /i "chromedriver" selenium.properties') DO SET CHROMEDRIVER=%%i
 FOR /F "eol=; tokens=2,2 delims==" %%i IN ('findstr /i "geckodriver" selenium.properties') DO SET GECKODRIVER=%%i
 FOR /F "eol=; tokens=2,2 delims==" %%i IN ('findstr /i "iedriver" selenium.properties') DO SET IEDRIVER=%%i
+FOR /F "eol=; tokens=2,2 delims==" %%i IN ('findstr /i "operadriver" selenium.properties') DO SET OPERADRIVER=%%i
 
 echo ***************** Starting selenium server *****************
 
 cd %ROOT%
-java -Dwebdriver.gecko.driver=%GECKODRIVER% -Dwebdriver.chrome.driver=%CHROMEDRIVER%  -Dwebdriver.ie.driver=%IEDRIVER% -jar %SELENIUM% 
+java -Dwebdriver.gecko.driver=%GECKODRIVER% -Dwebdriver.chrome.driver=%CHROMEDRIVER%  -Dwebdriver.ie.driver=%IEDRIVER% -Dwebdriver.opera.driver=%OPERADRIVER% -jar %SELENIUM% 
 
 :End

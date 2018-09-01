@@ -1,12 +1,19 @@
 package test;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -47,11 +54,12 @@ public class BaseTest {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+
         webDriver = WebDriverPool.DEFAULT.getDriver(url,capabilities);
         setupEventListener();
 
-        webDriver.navigate().to(baseUrl);
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     }
 
     @AfterSuite(alwaysRun = true)
@@ -64,5 +72,9 @@ public class BaseTest {
         EventListener eventListener = new EventListener();
         driver.register(eventListener);
         driver.manage().window().maximize();
+    }
+
+    public void navigate(String url){
+        driver.navigate().to(url);
     }
 }
